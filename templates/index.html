@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube MP3 Downloader</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        input[type=text] { width: 400px; padding: 10px; }
+        button { padding: 10px 20px; background-color: green; color: white; border: none; }
+        .flash { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Stiahni MP3 z YouTube</h1>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Vlož YouTube URL">
+        <button type="submit">Stiahnuť MP3</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+    {% endwith %}
+</body>
+</html>
